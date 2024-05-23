@@ -2,17 +2,17 @@ import dynamodb from '../services/dynamoService';
 import joi from 'joi';
 import { PREFIX_NAME } from '../config';
 
-const BeverageModel = dynamodb.define('beverage', {
-    hashKey: 'BeverageId',
+const clothingModel = dynamodb.define('beverage', {
+    hashKey: 'clothId',
     timestamps: false,
     schema: {
-        BeverageId: dynamodb.types.uuid(),
+        clothId: dynamodb.types.uuid(),
         Name: joi.string(),
-        Kcal: joi.number(),
         Price: joi.number(),
-        Ethylic: joi.boolean()
+        Material: joi.string(),
+        Size: joi.string(),
     },
-    tableName: `Beverages${PREFIX_NAME}`
+    tableName: `Clothing${PREFIX_NAME}`
 });
 
 dynamodb.createTables((err: Error)=>{
@@ -21,4 +21,4 @@ dynamodb.createTables((err: Error)=>{
     console.log('Tables created');
 });
 
-export default BeverageModel;
+export default clothingModel;

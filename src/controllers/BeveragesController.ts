@@ -39,7 +39,7 @@ class BeveragesController extends AbstractController{
             console.log(error);
             res.status(500).send("<h1>Internal Server Error</h1>" + error);
         }
-    }                   
+    }
     
 }
 
