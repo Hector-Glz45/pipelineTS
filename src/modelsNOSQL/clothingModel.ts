@@ -18,7 +18,7 @@ const clothingModel = dynamodb.define('beverage', {
 dynamodb.createTables((err: Error)=>{
     if(err)
         return console.log(err);
-    console.log('Tables created');
+    console.log('Nosql tables created');
 });
 
 export default clothingModel;

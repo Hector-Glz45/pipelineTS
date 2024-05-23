@@ -3,6 +3,7 @@ import { PORT, NODE_ENV } from './config';
 import express from 'express';
 import cors from 'cors';
 import BeveragesController from './controllers/BeveragesController';
+import ClothingController from './controllers/ClothingController';
 
 
 const server = new Server({
@@ -14,7 +15,8 @@ const server = new Server({
         cors()
     ],
     controllers: [
-        BeveragesController.instance
+        BeveragesController.instance,
+        ClothingController.instance
     ]
 });
 
